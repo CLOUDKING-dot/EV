@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <title>FAQ - BlueSwift</title>
+    <meta content="FAQ - BlueSwift" property="og:title"/>
+    <meta content="FAQ - BlueSwift" property="twitter:title"/>
+    <meta content="width=device-width, initial-scale=1" name="viewport"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
+    <link href="https://fonts.googleapis.com" rel="preconnect"/>
+    <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin="anonymous"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        WebFont.load({
+            google: {
+                families: ["Asap:regular,500,600,700", "Inter:100,200,300,regular,500,600,700,800,900"]
+            }
+        });
+    </script>
+    <style>
+        body {
+            font-family: 'Asap', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #fff;
+            color: #333;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .navbar {
+            background: rgba(255,255,255,0.3);
+            backdrop-filter: blur(12px);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            padding: 20px 0;
+        }
+        .navbar .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .nav-menu {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+        .nav-link {
+            color: #333;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 16px;
+            text-transform: uppercase;
+        }
+        .nav-link:hover {
+            color: #000435;
+        }
+        .dropdown {
+            position: relative;
+        }
+        .dropdown-toggle {
+            cursor: pointer;
+        }
+        .dropdown-menu {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            padding: 10px 0;
+            min-width: 200px;
+        }
+        .dropdown-menu.active {
+            display: block;
+        }
+        .dropdown-link {
+            display: block;
+            padding: 10px 20px;
+            color: #333;
+            text-decoration: none;
+            font-family: 'Inter', sans-serif;
+            font-size: 16px;
+        }
+        .dropdown-link:hover {
+            color: #007bff;
+        }
+        .country-flag {
+            height: 20px;
+            border-radius: 50%;
+        }
+        .primary-btn {
+            background: #fff;
+            color: #000435;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 600;
+            text-transform: uppercase;
+            border: 2px solid #000435;
+        }
+        .primary-btn:hover {
+            background: #000435;
+            color: #fff;
+        }
+        .hamburger {
+            display: none;
+            font-size: 24px;
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
+        .hero-section {
+            background: linear-gradient(90deg, #fff 50%, #fff9ef 100%);
+            padding: 100px 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+        }
+        .hero-section .container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+        .hero-content {
+            max-width: 50%;
+        }
+        .hero-content h1 {
+            font-size: 64px;
+            font-weight: 700;
+            color: #000435;
+            line-height: 1.2;
+            margin-bottom: 20px;
+        }
+        .hero-content p {
+            font-size: 20px;
+            color: #333;
+            margin-bottom: 30px;
+            font-family: 'Inter', sans-serif;
+        }
+        .actions {
+            display: flex;
+            gap: 15px;
+        }
+        .badge {
+            height: 54px;
+            border-radius: 10px;
+        }
+        .hero-image {
+            max-width: 50%;
+        }
+        .hero-image img {
+            max-width: 100%;
+            height: auto;
+        }
+        .section {
+            padding: 60px 0;
+        }
+        .section h2 {
+            text-align: center;
+            font-size: 36px;
+            font-weight: 600;
+            color: #000435;
+            margin-bottom: 20px;
+        }
+        .accordion-wrapper {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .accordion-item {
+            border-bottom: 1px solid #ddd;
+            padding: 20px 0;
+        }
+        .accordion-item-trigger {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+        }
+        .accordion-heading {
+            font-size: 20px;
+            font-weight: 600;
+            color: #000435;
+            margin: 0;
+        }
+        .accordion-item-trigger img {
+            width: 24px;
+            transition: transform 0.3s ease;
+        }
+        .accordion-item-trigger.active img {
+            transform: rotate(180deg);
+        }
+        .accordion-item-content {
+            display: none;
+            padding-top: 10px;
+        }
+        .accordion-item-content.active {
+            display: block;
+        }
+        .accordion-item-content p {
+            font-size: 16px;
+            color: #666;
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            line-height: 1.6;
+        }
+        footer {
+            background: #000435;
+            color: #fff;
+            padding: 40px 0;
+        }
+        .footer-grid {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        .footer-column {
+            flex: 1;
+            min-width: 200px;
+        }
+        .footer-column h4 {
+            font-size: 18px;
+            margin-bottom: 15px;
+            font-weight: 600;
+            color: #fff;
+        }
+        .footer-column a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 16px;
+            display: block;
+            margin-bottom: 10px;
+            font-family: 'Inter', sans-serif;
+        }
+        .footer-column a:hover {
+            color: #f5a623;
+        }
+        .footer-column p {
+            font-size: 16px;
+            color: #fff;
+            font-family: 'Inter', sans-serif;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .footer-column .fa {
+            color: #fff;
+            font-size: 18px;
+        }
+        .footer-column .badge {
+            height: 60px;
+            margin-bottom: 10px;
+        }
+        .social-icons {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+            justify-content: center;
+        }
+        .social-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.3s ease;
+        }
+        .social-icon:hover {
+            transform: scale(1.1);
+        }
+        .social-icon .fa {
+            color: #fff;
+            font-size: 20px;
+        }
+        .copyright {
+            text-align: center;
+            padding: 20px 0;
+            font-size: 14px;
+            color: #ccc;
+            font-family: 'Inter', sans-serif;
+        }
+        @media (max-width: 768px) {
+            .nav-menu {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 60px;
+                left: 0;
+                width: 100%;
+                background: #fff;
+                padding: 20px;
+                box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            }
+            .nav-menu.active {
+                display: flex;
+            }
+            .hamburger {
+                display: block;
+            }
+            .hero-section .container {
+                flex-direction: column;
+                text-align: center;
+            }
+            .hero-content, .hero-image {
+                max-width: 100%;
+            }
+            .hero-image img {
+                margin-top: 30px;
+            }
+            .actions {
+                justify-content: center;
+            }
+            .section h2 {
+                font-size: 28px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <div class="navbar">
+        <div class="container">
+            <a href="#" class="w-nav-brand">
+                <img src="https://via.placeholder.com/150x50?text=BlueSwift" alt="BlueSwift Logo" style="height: 40px;"/>
+            </a>
+            <button class="hamburger">☰</button>
+            <nav class="nav-menu">
+                <a href="index.html" class="nav-link"><b>Home</b></a>
+                <a href="business.html" class="nav-link"><b>BlueSwift for Business</b></a>
+                <a href="about.html" class="nav-link"><b>About Us</b></a>
+                <a href="faq.html" class="nav-link"><b>FAQ</b></a>
+                <div class="dropdown">
+                    <div class="nav-link dropdown-toggle"><b>Join Us</b></div>
+                    <div class="dropdown-menu">
+                        <a href="career.html" class="dropdown-link"><b>Careers</b></a>
+                        <a href="driver.html" class="dropdown-link"><b>Driver</b></a>
+                        <a href="agent.html" class="dropdown-link"><b>Agent</b></a>
+                        <a href="business.html" class="dropdown-link"><b>BlueSwift for Business</b></a>
+                    </div>
+                </div>
+                <img src="12.png" class="country-flag"/>
+                <a href="#" class="primary-btn">Download App</a>
+            </nav>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <div class="hero-section">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Frequently Asked Questions</h1>
+                <p>Find answers to common questions about BlueSwift’s eco-friendly delivery services. If you don’t see your question here, feel free to contact our support team!</p>
+                <div class="actions">
+                    <a href="#" target="_blank">
+                        <img src="1.png" alt="Google Play" class="badge"/>
+                    </a>
+                    <a href="#" target="_blank">
+                        <img src="2.png" alt="App Store" class="badge"/>
+                    </a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="14.png" alt="App Screens"/>
+            </div>
+        </div>
+    </div>
+
+    <!-- FAQ Section -->
+    <div class="section">
+        <div class="container">
+            <h2>FAQ</h2>
+            <div class="accordion-wrapper">
+                <div class="accordion-item">
+                    <div class="accordion-item-trigger">
+                        <h3 class="accordion-heading">How does BlueSwift ensure eco-friendly deliveries?</h3>
+                        <img src="22.png" alt="Arrow Down"/>
+                    </div>
+                    <div class="accordion-item-content">
+                        <p>We use an electric vehicle fleet to minimize carbon emissions, ensuring sustainable logistics across Africa.</p>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <div class="accordion-item-trigger">
+                        <h3 class="accordion-heading">How can I track my delivery?</h3>
+                        <img src="22.png" alt="Arrow Down"/>
+                    </div>
+                    <div class="accordion-item-content">
+                        <p>Once your order is placed, you’ll receive real-time updates in the BlueSwift app, including your driver’s name and estimated arrival time.</p>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <div class="accordion-item-trigger">
+                        <h3 class="accordion-heading">What areas does BlueSwift operate in?</h3>
+                        <img src="22.png" alt="Arrow Down"/>
+                    </div>
+                    <div class="accordion-item-content">
+                        <p>We’re currently expanding across Africa. Check the app for availability in your city!</p>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <div class="accordion-item-trigger">
+                        <h3 class="accordion-heading">Can I pay with cash?</h3>
+                        <img src="22.png" alt="Arrow Down"/>
+                    </div>
+                    <div class="accordion-item-content">
+                        <p>Yes, we offer cash and digital payment options. Choose your preferred method in the app.</p>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <div class="accordion-item-trigger">
+                        <h3 class="accordion-heading">How do I become a BlueSwift driver?</h3>
+                        <img src="22.png" alt="Arrow Down"/>
+                    </div>
+                    <div class="accordion-item-content">
+                        <p>Visit our "Join Us" page, select "Driver," and follow the application process. We provide training and support!</p>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <div class="accordion-item-trigger">
+                        <h3 class="accordion-heading">What happens if my package is delayed?</h3>
+                        <img src="22.png" alt="Arrow Down"/>
+                    </div>
+                    <div class="accordion-item-content">
+                        <p>Contact our support team via the app or email support@blueswift.com. We’ll resolve it promptly.</p>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <div class="accordion-item-trigger">
+                        <h3 class="accordion-heading">Is there a limit to package size?</h3>
+                        <img src="22.png" alt="Arrow Down"/>
+                    </div>
+                    <div class="accordion-item-content">
+                        <p>Our EVs can handle most standard packages. For oversized items, contact support for assistance.</p>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <div class="accordion-item-trigger">
+                        <h3 class="accordion-heading">How do I contact support?</h3>
+                        <img src="22.png " alt="Arrow Down"/>
+                    </div>
+                    <div class="accordion-item-content">
+                        <p>Reach us at support@blueswift.com, call +1-800-BLUEEV, or use the in-app chat feature.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <h4>BlueSwift</h4>
+                    <p>Sustainable deliveries, one package at a time.</p>
+                </div>
+                <div class="footer-column">
+                    <h4>Get in Touch</h4>
+                    <p><i class="fa fa-map-marker"></i><a href="#">123 Eco Lane, Blue City</a></p>
+                    <p><i class="fa fa-phone"></i><a href="#">+1-800-BLUEEV</a></p>
+                    <p><i class="fa fa-envelope"></i><a href="mailto:support@blueswift.com">support@blueswift.com</a></p>
+                </div>
+                <div class="footer-column">
+                    <h4>Join BlueSwift</h4>
+                    <a href="#">Careers</a>
+                    <a href="#">Join as a Driver</a>
+                    <a href="#">Join as a Business</a>
+                    <a href="agent.html">Join as an Agent</a>
+                </div>
+                <div class="footer-column">
+                    <h4>Support</h4>
+                    <a href="#">Terms and Conditions</a>
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">FAQ</a>
+                    <a href="#">BlueSwift for Business MOU</a>
+                    <a href="#">Account Deletion Policy</a>
+                </div>
+                <div class="footer-column">
+                    <h4>Download App</h4>
+                    <a href="#"><img src="1.png" alt="Google Play" class="badge"/></a>
+                    <a href="#"><img src="10.png" alt="App Store" class="badge"/></a>
+                </div>
+            </div>
+            <div class="social-icons">
+                <a href="#" class="social-icon" style="background: #FF0000;">
+                    <i class="fa fa-youtube"></i>
+                </a>
+                <a href="#" class="social-icon" style="background: #25D366;">
+                    <i class="fa fa-whatsapp"></i>
+                </a>
+                <a href="#" class="social-icon" style="background: #E1306C;">
+                    <i class="fa fa-instagram"></i>
+                </a>
+                <a href="#" class="social-icon" style="background: #3B5998;">
+                    <i class="fa fa-facebook-f"></i>
+                </a>
+                <a href="#" class="social-icon" style="background: #000;">
+                    <i class="fa fa-twitter"></i>
+                </a>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>© BlueSwift 2025, All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Hamburger menu toggle
+        document.querySelector('.hamburger').addEventListener('click', () => {
+            document.querySelector('.nav-menu').classList.toggle('active');
+        });
+
+        // Dropdown toggle
+        document.querySelector('.dropdown-toggle').addEventListener('click', (e) => {
+            e.preventDefault();
+            const dropdownMenu = document.querySelector('.dropdown-menu');
+            dropdownMenu.classList.toggle('active');
+        });
+
+        // Close dropdown when clicking outside
+        document.addEventListener('click', (e) => {
+            const dropdown = document.querySelector('.dropdown');
+            const dropdownMenu = document.querySelector('.dropdown-menu');
+            if (!dropdown.contains(e.target)) {
+                dropdownMenu.classList.remove('active');
+            }
+        });
+
+        // Accordion toggle
+        document.querySelectorAll('.accordion-item-trigger').forEach(trigger => {
+            trigger.addEventListener('click', () => {
+                const content = trigger.nextElementSibling;
+                const isActive = content.classList.contains('active');
+                
+                // Close all other accordions
+                document.querySelectorAll('.accordion-item-content').forEach(item => {
+                    item.classList.remove('active');
+                });
+                document.querySelectorAll('.accordion-item-trigger').forEach(item => {
+                    item.classList.remove('active');
+                });
+
+                // Toggle the clicked accordion
+                if (!isActive) {
+                    content.classList.add('active');
+                    trigger.classList.add('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
